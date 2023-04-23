@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Odev2</title>
+  <style>
+    body{
+      background: #D1913C;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #FFD194, #D1913C);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #FFD194, #D1913C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+
+    table{
+      margin: 0 auto;
+      height: 800px;
+      width: 900px;
+      border-collapse: collapse;
+      border-radius: 30px;
+      overflow: hidden;
+      color: black;
+      box-shadow: 0px 0px 20px black;
+    }
+    th,td{
+      font-family: Arial;
+      font-weight: bold;
+    }
+
+    thead th{
+      background-color: rgba(150, 86, 27, 0.788);
+      line-height: 60px;
+      text-align: center;
+      padding-right: 16px;
+      color: white;
+    }
+    thead td{
+      background-color: rgb(238, 191, 104);
+      line-height: 45px;
+    }
+    thead th:first-child{
+      padding-top: 30px;
+    }
+    tbody tr{
+      transition: all 0.2s ease;
+    }
+
+    tbody tr:nth-child(even){
+      background-color: rgb(211, 211, 211);
+    }
+    tbody tr:nth-child(odd){
+      background-color: rgb(240, 240, 240);
+    }
+    tbody tr:hover{
+      background-color: rgb(122, 122, 122);
+      transform: translateZ(10px);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      color: white;
+      cursor: pointer;
+    }
+    tbody tr:active{
+      opacity: 0.8;
+    }
+    
+    img{
+      height: 30px;
+      width: 60px;
+    }
+
+    .logo{
+      height: 35px;
+      width: 35px;
+    }
+    .Bayrağım{
+      height: 35px;
+      width: 50px;
+      border-radius: 10px;
+      margin-right: 20px;
+    }
+    .abc{
+      height: 35px;
+      width: 60px;
+    }
+  </style>
+</head>
+<body>
+  <table>
+    <colgroup>
+      <col span="1" style="width: 14%; font-size: 20px;">
+      <col span="2">
+      <col span="1" style="width: 16%;">
+      <col span="1" style="width: 15%;">
+      <col span="1" style="width: 8%;">
+      <col span="1" style="width: 20%;">
+    </colgroup>
+    <thead>
+      <tr>
+        <th colspan="3" style="border: none;">
+          <img class="Bayrağım" src="Ödev2Fotoğraflar/Bayrağım.png">
+          <img class="logo" src="Ödev2Fotoğraflar/favicon.png">
+          <img class="abc" src="Ödev2Fotoğraflar/Ekran görüntüsü 2023-04-11 070347.png">
+        </th>
+        <th colspan="2" style="font-size: 20px; font-family: Arial; border: none; text-align: left;">
+          Türkiye Kalkışları
+        </th>
+        <th colspan="2"></th>
+      </tr>
+      <tr style="font-size: 13px; line-height: 23px;">
+        <td style="padding-left: 20px;">Planlanmış</td>
+        <td>Havayolu</td>
+        <td>Uçuş</td>
+        <td>Varış Noktası</td>
+        <td>Sayaç</td>
+        <td>Kapı</td>
+        <td>Açıklama</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding-left: 20px;">09:00</td>
+        <td><img src="Ödev2Fotoğraflar/AnadoluJet.jpg"></td>
+        <td>AJ706</td>
+        <td>Malatya</td>
+        <td>015-034</td>
+        <td>C28</td>
+        <td>Iptal edildi</td>
+      </tr>
+      <tr>
+        <td style="padding-left: 20px;">13:15</td>
+        <td><img src="Ödev2Fotoğraflar/ButaAirways.png"></td>
+        <td>BA714</td>
+        <td>Baku</td>
+        <td>015-034</td>
+        <td>B14</td>
+        <td>21:30'a ertelendi</td>
+      </tr>
+      <tr>
+        <td style="padding-left: 20px;">15:00</td>
+        <td><img src="Ödev2Fotoğraflar/TurkishAirlines.png"></td>
+        <td>TA9424</td>
+        <td>Istanbul</td>
+        <td>035-040</td>
+        <td>B26</td>
+        <td>Son Çağrı</td>
+      </tr>
+      <tr>
+        <td style="padding-left: 20px;">15:25</td>
+        <td><img src="Ödev2Fotoğraflar/Pegasus.png"></td>
+        <td>PA8274</td>
+        <td>London</td>
+        <td>041-058</td>
+        <td>C37</td>
+        <td>19:40'a ertelendi</td>
+      </tr>
+      <tr>
+        <td style="padding-left: 20px;">15:50</td>
+        <td><img src="Ödev2Fotoğraflar/Lufthansa.png"></td>
+        <td>LA3324</td>
+        <td>New York</td>
+        <td>015-034</td>
+        <td>B25</td>
+        <td>Biniş Öncesi</td>
+      </tr>
+      <tr>
+        <td style="padding-left: 20px;">17:00</td>
+        <td><img src="Ödev2Fotoğraflar/AnadoluJet.jpg" style="height: 30px; width: 70px;"></td>
+        <td>AJ722</td>
+        <td>Ankara</td>
+        <td>015-034</td>
+        <td>B13</td>
+        <td>Biniş Öncesi</td>
+      </tr>
+      <tr>
+        <td style="padding-left: 20px;">17:00</td>
+        <td><img src="Ödev2Fotoğraflar/TurkishAirlines.png"></td>
+        <td>TA172</td>
+        <td>Adana</td>
+        <td>015-034</td>
+        <td>B18</td>
+        <td>Son Çağrı</td>
+      </tr>
+      <tr>
+        <td style="padding-left: 20px;">17:00</td>
+        <td><img src="Ödev2Fotoğraflar/TurkishAirlines.png"></td>
+        <td>TA8163</td>
+        <td>Berlin</td>
+        <td>041-058</td>
+        <td>C38</td>
+        <td>19:45'a ertelendi</td>
+      </tr>
+      <tr>
+        <td style="padding-left: 20px;">17:40</td>
+        <td><img src="Ödev2Fotoğraflar/TurkishAirlines.png"></td>
+        <td>TA3297</td>
+        <td>Mardin</td>
+        <td>015-034</td>
+        <td>B24</td>
+        <td>19:00'a ertelendi</td>
+      </tr>
+      <tr>
+        <td style="padding-left: 20px;">18:00</td>
+        <td><img src="Ödev2Fotoğraflar/AnadoluJet.jpg"></td>
+        <td>AJ124</td>
+        <td>Antalya</td>
+        <td>015-034</td>
+        <td>B17</td>
+        <td>Biniş Öncesi</td>
+      </tr>
+      <tr>
+        <td style="padding-left: 20px;">18:10</td>
+        <td><img src="Ödev2Fotoğraflar/ButaAirways.png"></td>
+        <td>BA8371</td>
+        <td>Moskova</td>
+        <td>041-058</td>
+        <td>C34</td>
+        <td>19:40'a ertelendi</td>
+      </tr>
+      <tr>
+        <td style="padding-left: 20px;">18:10</td>
+        <td><img src="Ödev2Fotoğraflar/Pegasus.png"></td>
+        <td>PA8300</td>
+        <td>Paris</td>
+        <td>041-058</td>
+        <td>C36</td>
+        <td>21:40'a ertelendi</td>
+      </tr>
+      <tr>
+        <td style="padding-left: 20px;">18:10</td>
+        <td><img src="Ödev2Fotoğraflar/TurkishAirlines.png"></td>
+        <td>TA8278</td>
+        <td>London</td>
+        <td>041-058</td>
+        <td>C41</td>
+        <td>Ayrıldı</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
