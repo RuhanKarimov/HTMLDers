@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saciçi Qovurma</title>
+  <style>
+    @font-face {
+      font-family: "A"; /* Fontun adını belirle */
+      src: url("KaushanScript-Regular.ttf"); /* Fontun dosya yolunu belirt */
+    }
+    body{
+      background-image: url("various-grocery-products-concrete-surface.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      font-size: 24.5px;
+      color: rgb(186, 4, 232);
+      font-family: "A", sans-serif;
+    }
+    #photo{
+      position: absolute;
+      left: 90px;
+      top: 15px;
+      width: 780px;
+      height: 722px;
+      overflow: hidden;
+      border-top-left-radius: 25px;
+      border-bottom-left-radius: 25px;
+      transition: 1s;
+      filter: blur(2px);
+      opacity: 0.5S;
+    }
+    img{
+      height: 722px;
+      padding-left: 00px;
+    }
+    
+    #price-table{
+        position: absolute;
+        top: -110px;
+        right: 40px;
+      opacity: 0;
+      transition: 1s;
+      font-size: 30px;
+      color: rgb(226, 226, 226);
+      }
+    #photo:hover{
+      height: 722px;
+      width: 1140px;
+      opacity: 1;
+      border-top-right-radius: 25px;
+      border-bottom-right-radius: 25px;
+      filter: blur(0px);
+      #price-table{
+        position: absolute;
+        top: 21px;
+        right: 40px;
+        opacity: 1;
+      }
+    }
+    .price-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .price-table th,
+    .price-table td {
+        padding: 10px;
+        text-align: center;
+        border: 1px solid #ccc;
+    }
+
+    .price-table th {
+        background-color: #f2f2f2;
+    }
+    #description{
+      position: absolute;
+      top: -10px;
+      right: 60px;
+      z-index: -222;
+      width: 550px;
+      text-align: center;
+      transition: 0.5s;
+      backdrop-filter: blur(3px);
+    }
+  </style>
+</head>
+<body>
+  <div id="photo">
+    <img src="SaciçiQovurma2.png" alt="Hengel">
+
+    <table id="price-table">
+      <thead>
+          <tr>
+              <th>Porsiyon</th>
+              <th>Fiyat</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td>Küçük</td>
+              <td>14TL</td>
+          </tr>
+          <tr>
+              <td>Orta</td>
+              <td>27TL</td>
+          </tr>
+          <tr>
+              <td>Büyük</td>
+              <td>39TL</td>
+          </tr>
+      </tbody>
+  </table>
+  
+  </div>
+  </div>
+  <div id="description">
+    <p>
+      Saciçi Kavurma <br><br>
+      Saciçi Kavurma, Azerbaycan mutfağının eşsiz ve lezzetli ana yemeklerinden biridir. Bu geleneksel yemek, dana eti, soğan, biber ve baharatlarla harmanlanarak özel bir tavada pişirilir. Restoranımızda, kaliteli malzemelerle özenle hazırlanan Saciçi Kavurma, müşterilerimizin damaklarını şenlendirecek bir lezzete sahiptir.
+
+Saciçi Kavurma, farklı porsiyon seçenekleriyle sunulmaktadır. Küçük boy Saciçi Kavurma porsiyonu 14TL, orta boy Saciçi Kavurma porsiyonu 27TL ve büyük boy Saciçi Kavurma porsiyonu 39TL olarak fiyatlandırılmıştır. Her bir porsiyon, özenle hazırlanan et ve baharatlarla enfes bir tat deneyimi sunmak amacıyla servis edilir.
+
+Restoranımızda size en iyi deneyimi yaşatmak için özenle seçilen malzemeler ve geleneksel tarifler kullanılmaktadır. Saciçi Kavurma ile Azerbaycan mutfağının benzersiz lezzetlerini deneyimleyin ve kendinizi şımartın. Sizleri restoranımıza bekliyoruz, unutulmaz bir yemek deneyimi yaşayın!
+    </p>
+  </div>
+  <script>
+    var description = document.getElementById("description");
+    var photo = document.getElementById("photo");
+    var pricetable = document.getElementById("price-table"); 
+
+    photo.addEventListener("mouseover", function() {
+      description.style.filter = "blur(2px)";
+    });
+    photo.addEventListener("mouseout", function(){
+      description.style.filter = "blur(0px)";
+      pricetable.style.transition = "1s";
+    })
+  </script>
+</body>
+</html>

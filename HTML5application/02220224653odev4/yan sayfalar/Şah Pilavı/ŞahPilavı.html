@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Şah Pilavı</title>
+  <style>
+    @font-face {
+      font-family: "A"; /* Fontun adını belirle */
+      src: url("Rubik80sFade-Regular.ttf"); /* Fontun dosya yolunu belirt */
+    }
+    body{
+      background-image: url("arkaplan2.jpg");
+      font-size: 29px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      font-family: "A", sans-serif;
+      color: white;
+    }
+    #photo{
+      position: absolute;
+      left: 90px;
+      top: 10px;
+      width: 780px;
+      height: 722px;
+      overflow: hidden;
+      border-top-left-radius: 25px;
+      border-bottom-left-radius: 25px;
+      transition: 1s;
+      filter: blur(2px);
+      opacity: 0.5S;
+    }
+    img{
+      height: 722px;
+      padding-left: -100px;
+    }
+    
+    #price-table{
+      opacity: 0;
+      transition: 2s;
+      }
+    #photo:hover{
+      height: 722px;
+      width: 1140px;
+      opacity: 1;
+      border-top-right-radius: 25px;
+      border-bottom-right-radius: 25px;
+      filter: blur(0px);
+      #price-table{
+        position: absolute;
+        top: -20px;
+        right: 40px;
+        opacity: 1;
+      }
+    }
+    #description{
+      position: absolute;
+      top: -10px;
+      right: 20px;
+      z-index: -222;
+      width: 630px;
+      text-align: center;
+      transition: 0.5s;
+    }
+  </style>
+</head>
+<body>
+  <div id="photo">
+    <img src="ŞahPilavı2.jpg" alt="Hengel">
+
+  <div id="price-table">
+    <h2>Fiyat Tablosu</h2>
+    <table>
+      <tr>
+        <th>Porsiyon</th>
+        <th>Fiyat</th>
+      </tr>
+      <tr>
+        <td>Küçük</td>
+        <td>10 TL</td>
+      </tr>
+      <tr>
+        <td>Orta</td>
+        <td>19 TL</td>
+      </tr>
+      <tr>
+        <td>Büyük</td>
+        <td>28 TL</td>
+      </tr>
+    </table>
+  </div>
+  </div>
+  <div id="description">
+    <p>
+      Şah Pilavı <br><br>
+      Şah Pliavı, Azerbaycan mutfağının zengin bir ana yemeği olarak öne çıkar. Farklı porsiyon seçenekleriyle sunulan bu lezzetli pilav, müşterilerimizin ilgisini çekecek bir seçenektir. Küçük boy Şah Pliavı 10TL, orta boy Şah Pliavı 19TL ve büyük boy Şah Pliavı 28TL olarak fiyatlandırılmıştır. Lezzetli ve doyurucu bir deneyim için özenle hazırlanan Şah Pliavı, uzun taneli pirinç, et, sebzeler ve baharatlarla zenginleştirilmiştir. Restoranımızda, kaliteli malzemeler ve geleneksel tarifler kullanarak misafirlerimize unutulmaz bir Azerbaycan lezzeti sunmaktayız. Restoranımıza gelerek Şah Pliavı'nın eşsiz lezzetini keşfedin ve Azerbaycan mutfağının zenginliğini deneyimleyin!
+    </p>
+  </div>
+  <script>
+    var description = document.getElementById("description");
+    var photo = document.getElementById("photo");
+    var pricetable = document.getElementById("price-table"); 
+
+    photo.addEventListener("mouseover", function() {
+      description.style.filter = "blur(4px)";
+    });
+    photo.addEventListener("mouseout", function(){
+      description.style.filter = "blur(0px)";
+      pricetable.style.transition = "1s";
+    })
+  </script>
+</body>
+</html>

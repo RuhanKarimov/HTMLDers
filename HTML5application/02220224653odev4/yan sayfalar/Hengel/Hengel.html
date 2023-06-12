@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hengel</title>
+  <style>
+    @font-face {
+      font-family: "A"; /* Fontun adını belirle */
+      src: url("CoveredByYourGrace-Regular.ttf"); /* Fontun dosya yolunu belirt */
+    }
+    body{
+      background-image: url("4219053.webp");
+      font-size: 30px;
+      color: white;
+      font-family: "A", sans-serif;
+    }
+    #photo{
+      position: absolute;
+      left: 90px;
+      top: 5px;
+      width: 780px;
+      height: 732px;
+      overflow: hidden;
+      border-top-left-radius: 25px;
+      border-bottom-left-radius: 25px;
+      transition: 1s;
+      filter: blur(2px);
+      opacity: 0.5S;
+    }
+    img{
+      height: 732px;
+    }
+    
+    #price-table{
+      opacity: 0;
+      transition: 1s;
+    }
+    #photo:hover{
+      height: 732px;
+      width: 1100px;
+      opacity: 1;
+      border-top-right-radius: 25px;
+      border-bottom-right-radius: 25px;
+      filter: blur(0px);
+      #price-table{
+        position: absolute;
+        top: -20px;
+        right: 40px;
+        opacity: 1;
+      }
+    }
+
+    #description{
+      position: absolute;
+      top: 0px;
+      right: 60px;
+      z-index: -222;
+      width: 550px;
+      text-align: center;
+      transition: 0.5s;
+    }
+  </style>
+</head>
+<body>
+  <div id="photo">
+    <img src="Hengel2.jpg" alt="Hengel">
+
+  <div id="price-table">
+    <h2>Fiyat Tablosu</h2>
+    <table>
+      <tr>
+        <th>Porsiyon</th>
+        <th>Fiyat</th>
+      </tr>
+      <tr>
+        <td>Küçük</td>
+        <td>19 TL</td>
+      </tr>
+      <tr>
+        <td>Orta</td>
+        <td>25 TL</td>
+      </tr>
+      <tr>
+        <td>Büyük</td>
+        <td>38 TL</td>
+      </tr>
+    </table>
+  </div>
+  </div>
+  <div id="description">
+    <p>
+      HENGEL <br>
+      Hengel, Azerbaycan mutfağının zengin bir ana yemeğidir. Dana eti, nohut, mercimek, pirinç ve baharatlarla hazırlanır. Restoranımızda özenle seçilen malzemelerle yapılan Hengel, zengin aroması ve doyurucu yapısıyla öne çıkar.
+
+Farklı porsiyon seçeneklerimiz mevcuttur: Küçük boy Hengel porsiyonu 19TL, orta boy Hengel porsiyonu 25TL ve büyük boy Hengel porsiyonu 38TL olarak fiyatlandırılmıştır. Her bir porsiyon özenle hazırlanarak doyurucu bir deneyim sunmak amacıyla servis edilir.
+
+Restoranımızda size en iyi deneyimi sunmak için kaliteli malzemeler ve geleneksel tarifler kullanıyoruz. Hengel'i denemek için sizi restoranımıza bekliyoruz. Azerbaycan'ın muhteşem tatlarını keşfedin ve kendinizi şımartın!
+    </p>
+  </div>
+  <script>
+    var description = document.getElementById("description");
+    var photo = document.getElementById("photo");
+    var pricetable = document.getElementById("price-table"); 
+
+    photo.addEventListener("mouseover", function() {
+      description.style.filter = "blur(4px)";
+    });
+    photo.addEventListener("mouseout", function(){
+      description.style.filter = "blur(0px)";
+      pricetable.style.transition = "1s";
+    })
+  </script>
+</body>
+</html>
