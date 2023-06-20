@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purpose of Traffic Light</title>
+    <link rel="stylesheet" href="Style.css">
+    <style>
+      .container {
+        position: absolute;
+        top: 20px;
+        right: 0px;
+        display: flex;
+        flex-direction: row; 
+      }
+      .traffic-light {
+        width: 100px;
+        height: 300px;
+        background-color: black;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 20px;
+        float: right;
+      }
+    
+      .light {
+        width: 65px;
+        height: 65px;
+        border-radius: 50%;
+        box-shadow: inset 0 0 15px black;
+        transition: 0.55s;
+      }
+    
+      .red {
+        background-color: red;
+      }
+    
+      .yellow {
+        background-color: rgb(255, 255, 0);
+      }
+    
+      .green {
+        background-color: rgb(0, 255, 0);
+      }
+    
+      .off {
+        opacity: 0.2;
+      }
+    
+      .button {
+        border: solid black 3.5px;
+        border-radius: 40px; 
+        margin: 30px;
+        font-size: large;
+        font-weight: bold;
+        color: white;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        color: black;
+        font-size: 23px;
+        transition: 0.5s;
+      }
+    
+      .red-button {
+        background-color: rgb(255, 0, 0);
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-right: 43px;
+        padding-left: 43px;
+      }
+    
+      .yellow-button {
+        background-color: rgb(196, 196, 0);
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-right: 30px;
+        padding-left: 30px;
+      }
+    
+      .green-button {
+        background-color: green;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-right: 35px;
+        padding-left: 35px;
+      }
+    
+      .red-button:hover{
+        background-color: rgb(253, 87, 87);
+      }
+    
+      .yellow-button:hover{
+         background-color: rgb(255, 255, 113);
+      }
+    
+      .green-button:hover{
+        background-color: rgb(0, 177, 0);
+      }
+    
+      .button:active{
+        opacity: 0.65;
+      }
+    
+      .active {
+        border-color: blue;
+      }
+
+      .description{
+        position: absolute;
+        top: 0px;
+        left: 15px;
+        font-size: 22px;
+        color: white;
+        box-shadow: 0 0 9px black;
+        margin-left: -20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        filter: blur(1px);
+        opacity: 0.5;
+        transition: 0.5s;
+      }
+      .description:hover{
+        opacity: 1;
+        filter: blur(0px);
+      }
+      table{
+        width: 330px;
+      }
+      td, th{
+        padding-bottom: 20px;
+      }
+      .heç{
+        position: absolute;
+        bottom: -19px;
+        left: 920px;
+        font-size: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="night">
+      <div class="surface" id="surface"></div>
+      <div class="car" id="car">
+        <img id="carimg" src="car images/Img_06.png" alt="">
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="traffic-light">
+        <div class="light red off"></div>
+        <div class="light yellow off"></div>
+        <div class="light green off"></div>
+      </div>
+      <div class="buttons">
+        <button class="button red-button" id="red-button">Red</button>
+        <button class="button yellow-button" id="yellow-button">Yellow</button>
+        <button class="button green-button" id="green-button">Green</button>
+      </div>
+    </div>
+    <div class="description">
+      <table>
+        <tr>
+          <caption><h2>Controls of Car</h2></caption>
+        </tr>
+        <tr>
+          <th>Stop</th>
+          <td>Red Button</td>
+          <td>Enter</td>
+        </tr>
+        <tr>
+          <th>Light (on/of)</th>
+          <td>Yellow Button</td>
+          <td>W</td>
+        </tr>
+        <tr>
+          <th>Move</th>
+          <td>Green Button</td>
+          <td>Enter</td>
+        </tr>
+      </table>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    
+    <script src="Magic.js"></script>
+    
+    <script>
+      // Get the elements from the document
+      const redLight = document.querySelector(".red");
+      const yellowLight = document.querySelector(".yellow");
+      const greenLight = document.querySelector(".green");
+      const redButton = document.getElementById("red-button");
+      const yellowButton = document.getElementById("yellow-button");
+      const greenButton = document.getElementById("green-button");
+      const surface = document.getElementById("surface");
+      const car = document.getElementById("car");
+      $img=$('.car img');
+      const cars=['car images/Img_05.png','car images/Img_06.png']
+
+      // Define a function to turn off all the lights
+      function turnOffLights() {
+        redLight.classList.add("off");
+        yellowLight.classList.add("off");
+        greenLight.classList.add("off");
+      }
+      
+      // Define a function to stop move car
+      function stopMove() {
+        surface.classList.remove("moveRight");
+        car.classList.remove("suspension");
+      }
+    
+      // Define a function to remove the active class from all the buttons
+      function removeActiveClass() {
+        redButton.classList.remove("active");
+        yellowButton.classList.remove("active");
+        greenButton.classList.remove("active");
+      }
+
+      // Define a function to move car
+      function move() {
+        surface.classList.add("moveRight");
+        car.classList.add("suspension");
+      }
+      
+      function changeImage() {
+        if($img.attr('src') == cars[0]){
+          $img.attr('src',cars[1]);
+        } else if ($img.attr('src') == cars[1]) {
+          $img.attr('src',cars[0]);
+        }
+      }
+    
+      // Add event listeners to the buttons
+      redButton.addEventListener("click", function() {
+        turnOffLights(); // Turn off all the lights
+        redLight.classList.remove("off"); // Turn on the red light
+        removeActiveClass(); // Remove the active class from all the buttons
+        redButton.classList.add("active"); // Add the active class to the red button
+        stopMove();
+      });
+    
+      yellowButton.addEventListener("click", function() {
+        turnOffLights(); // Turn off all the lights
+        yellowLight.classList.remove("off"); // Turn on the yellow light
+        removeActiveClass(); // Remove the active class from all the buttons
+        yellowButton.classList.add("active"); // Add the active class to the yellow button
+        changeImage();
+      });
+      greenButton.addEventListener("click", function() {
+        turnOffLights(); // Turn off all the lights
+        greenLight.classList.remove("off"); // Turn on the green light
+        removeActiveClass(); // Remove the active class from all the buttons__
+        greenButton.classList.add("active"); // Add the active class to the green button
+        move();
+      });
+    </script>
+  </body>
+</html>
